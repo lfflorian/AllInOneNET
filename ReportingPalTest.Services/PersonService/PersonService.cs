@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ReportingPalTest.Services.PersonService
 {
-    class PersonService : IPersonService
+    public class PersonService : IPersonService
     {
         public PersonDbContext DbContext { get; set; }
 

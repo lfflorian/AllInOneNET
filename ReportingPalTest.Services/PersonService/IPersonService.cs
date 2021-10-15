@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ReportingPalTest.Services.PersonService
 {
-    interface IPersonService
+    public interface IPersonService
     {
         PersonDbContext DbContext { get; set; }
         Task<Person> Get(int? id); 

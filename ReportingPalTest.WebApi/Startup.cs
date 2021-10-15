@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ReportingPalTest.Database.Context;
+using ReportingPalTest.Services.PersonService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +34,9 @@ namespace ReportingPalTest.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ReportingPalTest.WebApi", Version = "v1" });
             });
+
+            services.AddTransient<IPersonService, PersonService>();
+            services.AddScoped<PersonDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
