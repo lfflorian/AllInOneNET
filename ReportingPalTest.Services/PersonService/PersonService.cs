@@ -13,6 +13,10 @@ namespace ReportingPalTest.Services.PersonService
     {
         public PersonDbContext DbContext { get; set; }
 
+        public PersonService(PersonDbContext context)
+        {
+            this.DbContext = context;
+        }
         public async Task<Person> Get(int? id)
         {
             return await DbContext.People.Where(person => person.Id == id).FirstOrDefaultAsync();
