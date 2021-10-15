@@ -12,8 +12,9 @@ using System.Threading.Tasks;
 
 namespace ReportingPalTest.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class PersonController : ControllerBase
     {
         private readonly IPersonService Service;
