@@ -36,6 +36,7 @@ namespace ReportingPalTest.WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ReportingPalTest.WebApi", Version = "v1" });
             });
 
+            services.AddAutoMapper(typeof(Startup).Assembly);
             services.AddTransient<IPersonService, PersonService>();
             services.AddDbContext<PersonDbContext>(op => op.UseInMemoryDatabase("ReportingPalTest"));
             services.AddScoped<PersonDbContext>();
