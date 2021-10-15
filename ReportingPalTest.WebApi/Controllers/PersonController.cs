@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ReportingPalTest.Services.PersonService;
+using ReportingPalTest.WebApi.Middleware;
 using ReportingPalTest.WebApi.Model.Dto;
 using ReportingPalTest.WebApi.Model.Request;
 using System;
@@ -25,6 +26,7 @@ namespace ReportingPalTest.WebApi.Controllers
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(ModelValidationAttribute))]
         public async Task<IActionResult> Post([FromBody] PersonRequest req)
         {
             var person = await Service.Get(req.UniqueId);
