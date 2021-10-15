@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using ReportingPalTest.Database.Context;
 using ReportingPalTest.Services.PersonService;
+using ReportingPalTest.WebApi.Middleware;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,8 @@ namespace ReportingPalTest.WebApi
             }
 
             app.UseHttpsRedirection();
+
+            app.ConfigureExceptionHandler();
 
             app.UseRouting();
 
