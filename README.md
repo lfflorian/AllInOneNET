@@ -1,5 +1,5 @@
-# Reporting Pal Test
-This its a Web Rest API created in ASP.NET core 5.0 for testing purpose of company Reporting Pal. 
+# All in one API
+This its a Web Rest API created in ASP.NET core 5.0 All in one. 
 
 The objective of this project its to search a person by a unique Id, by POST method, using Entity Framework, but implementing all features that its commonly necessary in the building of Web Api's on NET Core
 
